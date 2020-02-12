@@ -1,0 +1,56 @@
+
+
+
+
+// Adding Meta container admin order page
+add_action( 'add_meta_boxes', 'lygo_add_meta_boxes' );
+if ( ! function_exists( 'lygo_add_meta_boxes' ) )
+{
+    function lygo_add_meta_boxes()
+    {
+        add_meta_box( 'lygo_other_fields', __('Invoice Date','woocommerce'), 'lygo_add_other_fields_for_invoice', 'shop_order', 'side', 'core' );
+    }
+}
+
+// Adding Meta field in the meta container admin order pages
+if ( ! function_exists( 'lygo_add_other_fields_for_invoice' ) )
+{
+    function lygo_add_other_fields_for_invoice()
+    {
+        global $post;
+
+        $invoice_date = get_post_meta( $post->ID, '_invoice_date', true ) ? get_post_meta( $post->ID, '_invoice_date', true ) : false;
+
+        if (!$invoice_date) {
+            $invoice_date = get_post_meta( $post->ID, '_completed_date', true ) ? date('Y-m-d', strtotime(get_post_meta( $post->ID, '_completed_date', true ))) : '';
+        }
+
+        echo '<input type="hidden" name="lygo_other_meta_field_nonce" value="' . wp_create_nonce() . '">
+        <p style="border-bottom:solid 1px #eee;padding-bottom:13px;">
+            <input type="text" style="width:250px;";" name="_invoice_date" placeholder="' . $invoice_date . '" value="' . $invoice_date . '"></p>';
+
+    }
+}
+
+// Save the data of the Meta field
+add_action( 'save_post', 'lygo_save_wc_order_other_fields', 10, 1 );
+if ( ! function_exists( 'lygo_save_wc_order_other_fields' ) )
+{
+
+    function lygo_save_wc_order_other_fields( $post_id ) {
+
+        // Check if our nonce is set.
+        if ( ! isset( $_POST[ 'lygo_other_meta_field_nonce' ] ) ) {
+            return $post_id;
+        }
+
+        $nonce = $_REQUEST[ 'lygo_other_meta_field_nonce' ];
+
+        // Sanitize user input  and update the meta field in the database.
+        update_post_meta( $post_id, '_invoice_date', $_POST[ '_invoice_date' ] );
+    }
+}
+
+
+
+
