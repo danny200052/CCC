@@ -46,11 +46,11 @@ if ( ! function_exists( 'lygo_save_wc_order_other_fields' ) )
 
         $nonce = $_REQUEST[ 'lygo_other_meta_field_nonce' ];
 
+        if ( ! wp_verify_nonce( $nonce ) ) {
+            return $post_id;
+        }
+
         // Sanitize user input  and update the meta field in the database.
         update_post_meta( $post_id, '_invoice_date', $_POST[ '_invoice_date' ] );
     }
 }
-
-
-
-
