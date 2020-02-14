@@ -77,7 +77,7 @@ if ( ! function_exists( 'lygo_save_wc_order_other_fields' ) )
 
         // Sanitize user input  and update the meta field in the database.
         update_post_meta( $post_id, '_completed_date', $_POST[ '_completed_date' ] );
-    }
+        
+        }
 
-
-}
+  }
