@@ -1,0 +1,3 @@
+$('#wp_nav_menu-item-custom_html-16 > div > ul > li:nth-child(1) > a').on('hover',function(){
+  var img='https://ssfirepits.com/wp-content/uploads/2015/02/42-Elliptical-on-3-Legs-with-Snuffer-768x768.jpg';
+$('#wp_nav_menu-item-custom_html-18 > div > a > img').attr('src',img);});
