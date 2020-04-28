@@ -1,28 +1,26 @@
-
-jQuery('#wp_nav_menu-item-custom_html-16 > div > ul > li:nth-child(1) > a').on('hover',function(){
+$('#wp_nav_menu-item-custom_html-7 > div > ul > li:nth-child(1) > a').on('hover',function(){
   var img='https://ssfirepits.com/wp-content/uploads/2016/04/30-E-Short-01-square.jpg';
-jQuery('#wp_nav_menu-item-custom_html-18 > div > a > img').attr('src',img);});
+$('#wp_nav_menu-item-custom_html-6 > div > a > img').attr('src',img);});
 
 
-jQuery('#wp_nav_menu-item-custom_html-16 > div > ul > li:nth-child(2) > a').on('hover',function(){
+$('#wp_nav_menu-item-custom_html-7 > div > ul > li:nth-child(2) > a').on('hover',function(){
   var img='https://ssfirepits.com/wp-content/uploads/2015/02/36-Elliptical-on-3-Legs.jpg';
-jQuery('#wp_nav_menu-item-custom_html-18 > div > a > img').attr('src',img);});
+$('#wp_nav_menu-item-custom_html-6 > div > a > img').attr('src',img);});
 
 
-jQuery('#wp_nav_menu-item-custom_html-16 > div > ul > li:nth-child(3) > a').on('hover',function(){
+$('#wp_nav_menu-item-custom_html-7 > div > ul > li:nth-child(3) > a').on('hover',function(){
   var img='https://ssfirepits.com/wp-content/uploads/2015/02/37-Hemi-on-Round-Base.jpg';
-jQuery('#wp_nav_menu-item-custom_html-18 > div > a > img').attr('src',img);});
+$('#wp_nav_menu-item-custom_html-6 > div > a > img').attr('src',img);});
 
 
-jQuery('#wp_nav_menu-item-custom_html-16 > div > ul > li:nth-child(4) > a').on('hover',function(){
+$('#wp_nav_menu-item-custom_html-7 > div > ul > li:nth-child(4) > a').on('hover',function(){
   var img='https://ssfirepits.com/wp-content/uploads/2020/03/37-Cauldronsquare.jpeg';
-jQuery('#wp_nav_menu-item-custom_html-18 > div > a > img').attr('src',img);});
+$('#wp_nav_menu-item-custom_html-6 > div > a > img').attr('src',img);});
 
 
-jQuery('#wp_nav_menu-item-custom_html-16 > div > ul > li:nth-child(5) > a').on('hover',function(){
+$('#wp_nav_menu-item-custom_html-7 > div > ul > li:nth-child(5) > a').on('hover',function(){
   var img='https://ssfirepits.com/wp-content/uploads/2018/07/42-inch-Decorative-Fire-Pit-01-square.jpg';
-jQuery('#wp_nav_menu-item-custom_html-18 > div > a > img').attr('src',img);});
-
+$('#wp_nav_menu-item-custom_html-6 > div > a > img').attr('src',img);});
 
 
 $.fn.preload = function() {
