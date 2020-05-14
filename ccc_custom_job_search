@@ -1,0 +1,29 @@
+add_shortcode( 'ccc_custom_job_search', function () {
+
+ob_start();	?>
+<form method="GET" action="/available-jobs/">
+  <p>
+    <label for="keywords">Search Keyword</label>
+    <input type="text" id="search_keywords" name="search_keywords" />
+  </p>
+  <p>
+    <label for="keywords">Search Location</label>
+    <input type="text" id="search_location" name="search_location" />
+  </p>
+  <p>
+  	<label for="search_category">Select Category</label>
+  	<select id="search_category" name="search_category">
+  		<?php foreach ( get_job_listing_types() as $cat ) : ?>
+  			<option value="<?php echo esc_attr( $cat->term_id ); ?>"><?php echo esc_html( $cat->name ); ?></option>
+  		<?php endforeach; ?>
+  	</select>
+  </p>
+  <p>
+    <input type="submit" value="Search" />
+  </p>
+</form>
+<?php
+	return ob_get_clean();
+} );
+
+//https://veterinaryclassifiedads.com/
